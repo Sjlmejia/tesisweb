@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewCapacitadorTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_id}"/>
+                    <h:outputText value="#{capacitadorController.selected.id}" title="#{bundle.ViewCapacitadorTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_nombre}"/>
+                    <h:outputText value="#{capacitadorController.selected.nombre}" title="#{bundle.ViewCapacitadorTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_apellido}"/>
+                    <h:outputText value="#{capacitadorController.selected.apellido}" title="#{bundle.ViewCapacitadorTitle_apellido}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_cargo}"/>
+                    <h:outputText value="#{capacitadorController.selected.cargo}" title="#{bundle.ViewCapacitadorTitle_cargo}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_cedula}"/>
+                    <h:outputText value="#{capacitadorController.selected.cedula}" title="#{bundle.ViewCapacitadorTitle_cedula}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_correo}"/>
+                    <h:outputText value="#{capacitadorController.selected.correo}" title="#{bundle.ViewCapacitadorTitle_correo}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_direccion}"/>
+                    <h:outputText value="#{capacitadorController.selected.direccion}" title="#{bundle.ViewCapacitadorTitle_direccion}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_telefonoOficina}"/>
+                    <h:outputText value="#{capacitadorController.selected.telefonoOficina}" title="#{bundle.ViewCapacitadorTitle_telefonoOficina}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_telefonoDomicilio}"/>
+                    <h:outputText value="#{capacitadorController.selected.telefonoDomicilio}" title="#{bundle.ViewCapacitadorTitle_telefonoDomicilio}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_extTelefonoOficina}"/>
+                    <h:outputText value="#{capacitadorController.selected.extTelefonoOficina}" title="#{bundle.ViewCapacitadorTitle_extTelefonoOficina}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_contrasenia}"/>
+                    <h:outputText value="#{capacitadorController.selected.contrasenia}" title="#{bundle.ViewCapacitadorTitle_contrasenia}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_celular}"/>
+                    <h:outputText value="#{capacitadorController.selected.celular}" title="#{bundle.ViewCapacitadorTitle_celular}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_fechaIngreso}"/>
+                    <h:outputText value="#{capacitadorController.selected.fechaIngreso}" title="#{bundle.ViewCapacitadorTitle_fechaIngreso}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_fechaNacimiento}"/>
+                    <h:outputText value="#{capacitadorController.selected.fechaNacimiento}" title="#{bundle.ViewCapacitadorTitle_fechaNacimiento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewCapacitadorLabel_administradorid}"/>
+                    <h:outputText value="#{capacitadorController.selected.administradorid}" title="#{bundle.ViewCapacitadorTitle_administradorid}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{capacitadorController.destroyAndView}" value="#{bundle.ViewCapacitadorDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewCapacitadorEditLink}"/>
+                <br />
+                <h:commandLink action="#{capacitadorController.prepareCreate}" value="#{bundle.ViewCapacitadorCreateLink}" />
+                <br />
+                <h:commandLink action="#{capacitadorController.prepareList}" value="#{bundle.ViewCapacitadorShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewCapacitadorIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRecursoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRecursoLabel_id}"/>
+                    <h:outputText value="#{recursoController.selected.id}" title="#{bundle.ViewRecursoTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewRecursoLabel_autor}"/>
+                    <h:outputText value="#{recursoController.selected.autor}" title="#{bundle.ViewRecursoTitle_autor}"/>
+                    <h:outputText value="#{bundle.ViewRecursoLabel_descripcion}"/>
+                    <h:outputText value="#{recursoController.selected.descripcion}" title="#{bundle.ViewRecursoTitle_descripcion}"/>
+                    <h:outputText value="#{bundle.ViewRecursoLabel_edicion}"/>
+                    <h:outputText value="#{recursoController.selected.edicion}" title="#{bundle.ViewRecursoTitle_edicion}"/>
+                    <h:outputText value="#{bundle.ViewRecursoLabel_nombre}"/>
+                    <h:outputText value="#{recursoController.selected.nombre}" title="#{bundle.ViewRecursoTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewRecursoLabel_path}"/>
+                    <h:outputText value="#{recursoController.selected.path}" title="#{bundle.ViewRecursoTitle_path}"/>
+                    <h:outputText value="#{bundle.ViewRecursoLabel_tamanio}"/>
+                    <h:outputText value="#{recursoController.selected.tamanio}" title="#{bundle.ViewRecursoTitle_tamanio}"/>
+                    <h:outputText value="#{bundle.ViewRecursoLabel_tipo}"/>
+                    <h:outputText value="#{recursoController.selected.tipo}" title="#{bundle.ViewRecursoTitle_tipo}"/>
+                    <h:outputText value="#{bundle.ViewRecursoLabel_capacitacionid}"/>
+                    <h:outputText value="#{recursoController.selected.capacitacionid}" title="#{bundle.ViewRecursoTitle_capacitacionid}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{recursoController.destroyAndView}" value="#{bundle.ViewRecursoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRecursoEditLink}"/>
+                <br />
+                <h:commandLink action="#{recursoController.prepareCreate}" value="#{bundle.ViewRecursoCreateLink}" />
+                <br />
+                <h:commandLink action="#{recursoController.prepareList}" value="#{bundle.ViewRecursoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewRecursoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

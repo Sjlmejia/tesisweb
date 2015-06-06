@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCarreraTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCarreraLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{carreraController.selected.id}" title="#{bundle.CreateCarreraTitle_id}" required="true" requiredMessage="#{bundle.CreateCarreraRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateCarreraLabel_coordinador}" for="coordinador" />
+                    <h:inputText id="coordinador" value="#{carreraController.selected.coordinador}" title="#{bundle.CreateCarreraTitle_coordinador}" />
+                    <h:outputLabel value="#{bundle.CreateCarreraLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{carreraController.selected.nombre}" title="#{bundle.CreateCarreraTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.CreateCarreraLabel_sectorId}" for="sectorId" />
+                    <h:inputText id="sectorId" value="#{carreraController.selected.sectorId}" title="#{bundle.CreateCarreraTitle_sectorId}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{carreraController.create}" value="#{bundle.CreateCarreraSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{carreraController.prepareList}" value="#{bundle.CreateCarreraShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCarreraIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

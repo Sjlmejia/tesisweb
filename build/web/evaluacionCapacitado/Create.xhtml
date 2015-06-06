@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEvaluacionCapacitadoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateEvaluacionCapacitadoLabel_idEvaluacionCapacitado}" for="idEvaluacionCapacitado" />
+                    <h:inputText id="idEvaluacionCapacitado" value="#{evaluacionCapacitadoController.selected.idEvaluacionCapacitado}" title="#{bundle.CreateEvaluacionCapacitadoTitle_idEvaluacionCapacitado}" required="true" requiredMessage="#{bundle.CreateEvaluacionCapacitadoRequiredMessage_idEvaluacionCapacitado}"/>
+                    <h:outputLabel value="#{bundle.CreateEvaluacionCapacitadoLabel_calificaciónEstudiante}" for="calificaciónEstudiante" />
+                    <h:inputText id="calificaciónEstudiante" value="#{evaluacionCapacitadoController.selected.calificaciónEstudiante}" title="#{bundle.CreateEvaluacionCapacitadoTitle_calificaciónEstudiante}" />
+                    <h:outputLabel value="#{bundle.CreateEvaluacionCapacitadoLabel_capacitadoid}" for="capacitadoid" />
+                    <h:inputText id="capacitadoid" value="#{evaluacionCapacitadoController.selected.capacitadoid}" title="#{bundle.CreateEvaluacionCapacitadoTitle_capacitadoid}" />
+                    <h:outputLabel value="#{bundle.CreateEvaluacionCapacitadoLabel_preguntaid}" for="preguntaid" />
+                    <h:inputText id="preguntaid" value="#{evaluacionCapacitadoController.selected.preguntaid}" title="#{bundle.CreateEvaluacionCapacitadoTitle_preguntaid}" />
+                    <h:outputLabel value="#{bundle.CreateEvaluacionCapacitadoLabel_respuestaid}" for="respuestaid" />
+                    <h:inputText id="respuestaid" value="#{evaluacionCapacitadoController.selected.respuestaid}" title="#{bundle.CreateEvaluacionCapacitadoTitle_respuestaid}" />
+                    <h:outputLabel value="#{bundle.CreateEvaluacionCapacitadoLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{evaluacionCapacitadoController.selected.fecha}" title="#{bundle.CreateEvaluacionCapacitadoTitle_fecha}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateEvaluacionCapacitadoLabel_hora}" for="hora" />
+                    <h:inputText id="hora" value="#{evaluacionCapacitadoController.selected.hora}" title="#{bundle.CreateEvaluacionCapacitadoTitle_hora}" >
+                        <f:convertDateTime pattern="HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{evaluacionCapacitadoController.create}" value="#{bundle.CreateEvaluacionCapacitadoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{evaluacionCapacitadoController.prepareList}" value="#{bundle.CreateEvaluacionCapacitadoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateEvaluacionCapacitadoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

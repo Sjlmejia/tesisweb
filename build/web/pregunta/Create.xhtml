@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePreguntaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePreguntaLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{preguntaController.selected.id}" title="#{bundle.CreatePreguntaTitle_id}" required="true" requiredMessage="#{bundle.CreatePreguntaRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreatePreguntaLabel_calificacion}" for="calificacion" />
+                    <h:inputText id="calificacion" value="#{preguntaController.selected.calificacion}" title="#{bundle.CreatePreguntaTitle_calificacion}" />
+                    <h:outputLabel value="#{bundle.CreatePreguntaLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{preguntaController.selected.descripcion}" title="#{bundle.CreatePreguntaTitle_descripcion}" />
+                    <h:outputLabel value="#{bundle.CreatePreguntaLabel_identificador}" for="identificador" />
+                    <h:inputText id="identificador" value="#{preguntaController.selected.identificador}" title="#{bundle.CreatePreguntaTitle_identificador}" />
+                    <h:outputLabel value="#{bundle.CreatePreguntaLabel_tipoPregunta}" for="tipoPregunta" />
+                    <h:inputText id="tipoPregunta" value="#{preguntaController.selected.tipoPregunta}" title="#{bundle.CreatePreguntaTitle_tipoPregunta}" />
+                    <h:outputLabel value="#{bundle.CreatePreguntaLabel_evaluacionId}" for="evaluacionId" />
+                    <h:inputText id="evaluacionId" value="#{preguntaController.selected.evaluacionId}" title="#{bundle.CreatePreguntaTitle_evaluacionId}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{preguntaController.create}" value="#{bundle.CreatePreguntaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{preguntaController.prepareList}" value="#{bundle.CreatePreguntaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePreguntaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

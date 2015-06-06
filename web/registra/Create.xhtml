@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateRegistraTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateRegistraLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{registraController.selected.id}" title="#{bundle.CreateRegistraTitle_id}" required="true" requiredMessage="#{bundle.CreateRegistraRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateRegistraLabel_capacitacionid}" for="capacitacionid" />
+                    <h:inputText id="capacitacionid" value="#{registraController.selected.capacitacionid}" title="#{bundle.CreateRegistraTitle_capacitacionid}" />
+                    <h:outputLabel value="#{bundle.CreateRegistraLabel_capacitadoid}" for="capacitadoid" />
+                    <h:inputText id="capacitadoid" value="#{registraController.selected.capacitadoid}" title="#{bundle.CreateRegistraTitle_capacitadoid}" />
+                    <h:outputLabel value="#{bundle.CreateRegistraLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{registraController.selected.fecha}" title="#{bundle.CreateRegistraTitle_fecha}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateRegistraLabel_hora}" for="hora" />
+                    <h:inputText id="hora" value="#{registraController.selected.hora}" title="#{bundle.CreateRegistraTitle_hora}" >
+                        <f:convertDateTime pattern="HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{registraController.create}" value="#{bundle.CreateRegistraSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{registraController.prepareList}" value="#{bundle.CreateRegistraShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateRegistraIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

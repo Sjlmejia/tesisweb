@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAdministradorTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{administradorController.selected.id}" title="#{bundle.CreateAdministradorTitle_id}" required="true" requiredMessage="#{bundle.CreateAdministradorRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{administradorController.selected.nombre}" title="#{bundle.CreateAdministradorTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_apellido}" for="apellido" />
+                    <h:inputText id="apellido" value="#{administradorController.selected.apellido}" title="#{bundle.CreateAdministradorTitle_apellido}" />
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_cargo}" for="cargo" />
+                    <h:inputText id="cargo" value="#{administradorController.selected.cargo}" title="#{bundle.CreateAdministradorTitle_cargo}" />
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_cedula}" for="cedula" />
+                    <h:inputText id="cedula" value="#{administradorController.selected.cedula}" title="#{bundle.CreateAdministradorTitle_cedula}" />
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_correo}" for="correo" />
+                    <h:inputText id="correo" value="#{administradorController.selected.correo}" title="#{bundle.CreateAdministradorTitle_correo}" />
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{administradorController.selected.direccion}" title="#{bundle.CreateAdministradorTitle_direccion}" />
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_telefonoOficina}" for="telefonoOficina" />
+                    <h:inputText id="telefonoOficina" value="#{administradorController.selected.telefonoOficina}" title="#{bundle.CreateAdministradorTitle_telefonoOficina}" />
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_telefonoDomicilio}" for="telefonoDomicilio" />
+                    <h:inputText id="telefonoDomicilio" value="#{administradorController.selected.telefonoDomicilio}" title="#{bundle.CreateAdministradorTitle_telefonoDomicilio}" />
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_extTelefonoOficina}" for="extTelefonoOficina" />
+                    <h:inputText id="extTelefonoOficina" value="#{administradorController.selected.extTelefonoOficina}" title="#{bundle.CreateAdministradorTitle_extTelefonoOficina}" />
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_contrasenia}" for="contrasenia" />
+                    <h:inputText id="contrasenia" value="#{administradorController.selected.contrasenia}" title="#{bundle.CreateAdministradorTitle_contrasenia}" />
+                    <h:outputLabel value="#{bundle.CreateAdministradorLabel_celular}" for="celular" />
+                    <h:inputText id="celular" value="#{administradorController.selected.celular}" title="#{bundle.CreateAdministradorTitle_celular}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{administradorController.create}" value="#{bundle.CreateAdministradorSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{administradorController.prepareList}" value="#{bundle.CreateAdministradorShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateAdministradorIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCapacitadorTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{capacitadorController.selected.id}" title="#{bundle.CreateCapacitadorTitle_id}" required="true" requiredMessage="#{bundle.CreateCapacitadorRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{capacitadorController.selected.nombre}" title="#{bundle.CreateCapacitadorTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_apellido}" for="apellido" />
+                    <h:inputText id="apellido" value="#{capacitadorController.selected.apellido}" title="#{bundle.CreateCapacitadorTitle_apellido}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_cargo}" for="cargo" />
+                    <h:inputText id="cargo" value="#{capacitadorController.selected.cargo}" title="#{bundle.CreateCapacitadorTitle_cargo}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_cedula}" for="cedula" />
+                    <h:inputText id="cedula" value="#{capacitadorController.selected.cedula}" title="#{bundle.CreateCapacitadorTitle_cedula}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_correo}" for="correo" />
+                    <h:inputText id="correo" value="#{capacitadorController.selected.correo}" title="#{bundle.CreateCapacitadorTitle_correo}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{capacitadorController.selected.direccion}" title="#{bundle.CreateCapacitadorTitle_direccion}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_telefonoOficina}" for="telefonoOficina" />
+                    <h:inputText id="telefonoOficina" value="#{capacitadorController.selected.telefonoOficina}" title="#{bundle.CreateCapacitadorTitle_telefonoOficina}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_telefonoDomicilio}" for="telefonoDomicilio" />
+                    <h:inputText id="telefonoDomicilio" value="#{capacitadorController.selected.telefonoDomicilio}" title="#{bundle.CreateCapacitadorTitle_telefonoDomicilio}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_extTelefonoOficina}" for="extTelefonoOficina" />
+                    <h:inputText id="extTelefonoOficina" value="#{capacitadorController.selected.extTelefonoOficina}" title="#{bundle.CreateCapacitadorTitle_extTelefonoOficina}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_contrasenia}" for="contrasenia" />
+                    <h:inputText id="contrasenia" value="#{capacitadorController.selected.contrasenia}" title="#{bundle.CreateCapacitadorTitle_contrasenia}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_celular}" for="celular" />
+                    <h:inputText id="celular" value="#{capacitadorController.selected.celular}" title="#{bundle.CreateCapacitadorTitle_celular}" />
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_fechaIngreso}" for="fechaIngreso" />
+                    <h:inputText id="fechaIngreso" value="#{capacitadorController.selected.fechaIngreso}" title="#{bundle.CreateCapacitadorTitle_fechaIngreso}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_fechaNacimiento}" for="fechaNacimiento" />
+                    <h:inputText id="fechaNacimiento" value="#{capacitadorController.selected.fechaNacimiento}" title="#{bundle.CreateCapacitadorTitle_fechaNacimiento}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateCapacitadorLabel_administradorid}" for="administradorid" />
+                    <h:inputText id="administradorid" value="#{capacitadorController.selected.administradorid}" title="#{bundle.CreateCapacitadorTitle_administradorid}" required="true" requiredMessage="#{bundle.CreateCapacitadorRequiredMessage_administradorid}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{capacitadorController.create}" value="#{bundle.CreateCapacitadorSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{capacitadorController.prepareList}" value="#{bundle.CreateCapacitadorShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCapacitadorIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

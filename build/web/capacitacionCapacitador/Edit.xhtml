@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCapacitacionCapacitadorTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCapacitacionCapacitadorLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{capacitacionCapacitadorController.selected.id}" title="#{bundle.EditCapacitacionCapacitadorTitle_id}" required="true" requiredMessage="#{bundle.EditCapacitacionCapacitadorRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditCapacitacionCapacitadorLabel_capacitadorid}" for="capacitadorid" />
+                    <h:inputText id="capacitadorid" value="#{capacitacionCapacitadorController.selected.capacitadorid}" title="#{bundle.EditCapacitacionCapacitadorTitle_capacitadorid}" />
+                    <h:outputLabel value="#{bundle.EditCapacitacionCapacitadorLabel_capacitacionid}" for="capacitacionid" />
+                    <h:inputText id="capacitacionid" value="#{capacitacionCapacitadorController.selected.capacitacionid}" title="#{bundle.EditCapacitacionCapacitadorTitle_capacitacionid}" />
+                </h:panelGrid>
+                <h:commandLink action="#{capacitacionCapacitadorController.update}" value="#{bundle.EditCapacitacionCapacitadorSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditCapacitacionCapacitadorViewLink}"/>
+                <br />
+                <h:commandLink action="#{capacitacionCapacitadorController.prepareList}" value="#{bundle.EditCapacitacionCapacitadorShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditCapacitacionCapacitadorIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

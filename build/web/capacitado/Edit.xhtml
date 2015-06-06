@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCapacitadoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{capacitadoController.selected.id}" title="#{bundle.EditCapacitadoTitle_id}" required="true" requiredMessage="#{bundle.EditCapacitadoRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{capacitadoController.selected.nombre}" title="#{bundle.EditCapacitadoTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_apellido}" for="apellido" />
+                    <h:inputText id="apellido" value="#{capacitadoController.selected.apellido}" title="#{bundle.EditCapacitadoTitle_apellido}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_cargo}" for="cargo" />
+                    <h:inputText id="cargo" value="#{capacitadoController.selected.cargo}" title="#{bundle.EditCapacitadoTitle_cargo}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_cedula}" for="cedula" />
+                    <h:inputText id="cedula" value="#{capacitadoController.selected.cedula}" title="#{bundle.EditCapacitadoTitle_cedula}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_correo}" for="correo" />
+                    <h:inputText id="correo" value="#{capacitadoController.selected.correo}" title="#{bundle.EditCapacitadoTitle_correo}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{capacitadoController.selected.direccion}" title="#{bundle.EditCapacitadoTitle_direccion}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_telefonoOficina}" for="telefonoOficina" />
+                    <h:inputText id="telefonoOficina" value="#{capacitadoController.selected.telefonoOficina}" title="#{bundle.EditCapacitadoTitle_telefonoOficina}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_telefonoDomicilio}" for="telefonoDomicilio" />
+                    <h:inputText id="telefonoDomicilio" value="#{capacitadoController.selected.telefonoDomicilio}" title="#{bundle.EditCapacitadoTitle_telefonoDomicilio}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_extTelefonoOficina}" for="extTelefonoOficina" />
+                    <h:inputText id="extTelefonoOficina" value="#{capacitadoController.selected.extTelefonoOficina}" title="#{bundle.EditCapacitadoTitle_extTelefonoOficina}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_contrasenia}" for="contrasenia" />
+                    <h:inputText id="contrasenia" value="#{capacitadoController.selected.contrasenia}" title="#{bundle.EditCapacitadoTitle_contrasenia}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_celular}" for="celular" />
+                    <h:inputText id="celular" value="#{capacitadoController.selected.celular}" title="#{bundle.EditCapacitadoTitle_celular}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_numHistoriaClinica}" for="numHistoriaClinica" />
+                    <h:inputText id="numHistoriaClinica" value="#{capacitadoController.selected.numHistoriaClinica}" title="#{bundle.EditCapacitadoTitle_numHistoriaClinica}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_tipo}" for="tipo" />
+                    <h:inputText id="tipo" value="#{capacitadoController.selected.tipo}" title="#{bundle.EditCapacitadoTitle_tipo}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_capacitadorid}" for="capacitadorid" />
+                    <h:inputText id="capacitadorid" value="#{capacitadoController.selected.capacitadorid}" title="#{bundle.EditCapacitadoTitle_capacitadorid}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_carreraId}" for="carreraId" />
+                    <h:inputText id="carreraId" value="#{capacitadoController.selected.carreraId}" title="#{bundle.EditCapacitadoTitle_carreraId}" />
+                    <h:outputLabel value="#{bundle.EditCapacitadoLabel_sectorid}" for="sectorid" />
+                    <h:inputText id="sectorid" value="#{capacitadoController.selected.sectorid}" title="#{bundle.EditCapacitadoTitle_sectorid}" />
+                </h:panelGrid>
+                <h:commandLink action="#{capacitadoController.update}" value="#{bundle.EditCapacitadoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditCapacitadoViewLink}"/>
+                <br />
+                <h:commandLink action="#{capacitadoController.prepareList}" value="#{bundle.EditCapacitadoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditCapacitadoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

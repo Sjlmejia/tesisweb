@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateRecursoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateRecursoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{recursoController.selected.id}" title="#{bundle.CreateRecursoTitle_id}" required="true" requiredMessage="#{bundle.CreateRecursoRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateRecursoLabel_autor}" for="autor" />
+                    <h:inputText id="autor" value="#{recursoController.selected.autor}" title="#{bundle.CreateRecursoTitle_autor}" />
+                    <h:outputLabel value="#{bundle.CreateRecursoLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{recursoController.selected.descripcion}" title="#{bundle.CreateRecursoTitle_descripcion}" />
+                    <h:outputLabel value="#{bundle.CreateRecursoLabel_edicion}" for="edicion" />
+                    <h:inputText id="edicion" value="#{recursoController.selected.edicion}" title="#{bundle.CreateRecursoTitle_edicion}" />
+                    <h:outputLabel value="#{bundle.CreateRecursoLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{recursoController.selected.nombre}" title="#{bundle.CreateRecursoTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.CreateRecursoLabel_path}" for="path" />
+                    <h:inputText id="path" value="#{recursoController.selected.path}" title="#{bundle.CreateRecursoTitle_path}" />
+                    <h:outputLabel value="#{bundle.CreateRecursoLabel_tamanio}" for="tamanio" />
+                    <h:inputText id="tamanio" value="#{recursoController.selected.tamanio}" title="#{bundle.CreateRecursoTitle_tamanio}" />
+                    <h:outputLabel value="#{bundle.CreateRecursoLabel_tipo}" for="tipo" />
+                    <h:inputText id="tipo" value="#{recursoController.selected.tipo}" title="#{bundle.CreateRecursoTitle_tipo}" />
+                    <h:outputLabel value="#{bundle.CreateRecursoLabel_capacitacionid}" for="capacitacionid" />
+                    <h:inputText id="capacitacionid" value="#{recursoController.selected.capacitacionid}" title="#{bundle.CreateRecursoTitle_capacitacionid}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{recursoController.create}" value="#{bundle.CreateRecursoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{recursoController.prepareList}" value="#{bundle.CreateRecursoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateRecursoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

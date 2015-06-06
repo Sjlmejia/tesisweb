@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditResponsableTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{responsableController.selected.id}" title="#{bundle.EditResponsableTitle_id}" required="true" requiredMessage="#{bundle.EditResponsableRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{responsableController.selected.nombre}" title="#{bundle.EditResponsableTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_apellido}" for="apellido" />
+                    <h:inputText id="apellido" value="#{responsableController.selected.apellido}" title="#{bundle.EditResponsableTitle_apellido}" />
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_cargo}" for="cargo" />
+                    <h:inputText id="cargo" value="#{responsableController.selected.cargo}" title="#{bundle.EditResponsableTitle_cargo}" />
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_cedula}" for="cedula" />
+                    <h:inputText id="cedula" value="#{responsableController.selected.cedula}" title="#{bundle.EditResponsableTitle_cedula}" />
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_correo}" for="correo" />
+                    <h:inputText id="correo" value="#{responsableController.selected.correo}" title="#{bundle.EditResponsableTitle_correo}" />
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{responsableController.selected.direccion}" title="#{bundle.EditResponsableTitle_direccion}" />
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_telefonoOficina}" for="telefonoOficina" />
+                    <h:inputText id="telefonoOficina" value="#{responsableController.selected.telefonoOficina}" title="#{bundle.EditResponsableTitle_telefonoOficina}" />
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_telefonoDomicilio}" for="telefonoDomicilio" />
+                    <h:inputText id="telefonoDomicilio" value="#{responsableController.selected.telefonoDomicilio}" title="#{bundle.EditResponsableTitle_telefonoDomicilio}" />
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_extTelefonoOficina}" for="extTelefonoOficina" />
+                    <h:inputText id="extTelefonoOficina" value="#{responsableController.selected.extTelefonoOficina}" title="#{bundle.EditResponsableTitle_extTelefonoOficina}" />
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_celular}" for="celular" />
+                    <h:inputText id="celular" value="#{responsableController.selected.celular}" title="#{bundle.EditResponsableTitle_celular}" />
+                    <h:outputLabel value="#{bundle.EditResponsableLabel_sectorId}" for="sectorId" />
+                    <h:inputText id="sectorId" value="#{responsableController.selected.sectorId}" title="#{bundle.EditResponsableTitle_sectorId}" />
+                </h:panelGrid>
+                <h:commandLink action="#{responsableController.update}" value="#{bundle.EditResponsableSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditResponsableViewLink}"/>
+                <br />
+                <h:commandLink action="#{responsableController.prepareList}" value="#{bundle.EditResponsableShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditResponsableIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

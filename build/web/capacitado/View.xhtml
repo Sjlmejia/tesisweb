@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewCapacitadoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_id}"/>
+                    <h:outputText value="#{capacitadoController.selected.id}" title="#{bundle.ViewCapacitadoTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_nombre}"/>
+                    <h:outputText value="#{capacitadoController.selected.nombre}" title="#{bundle.ViewCapacitadoTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_apellido}"/>
+                    <h:outputText value="#{capacitadoController.selected.apellido}" title="#{bundle.ViewCapacitadoTitle_apellido}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_cargo}"/>
+                    <h:outputText value="#{capacitadoController.selected.cargo}" title="#{bundle.ViewCapacitadoTitle_cargo}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_cedula}"/>
+                    <h:outputText value="#{capacitadoController.selected.cedula}" title="#{bundle.ViewCapacitadoTitle_cedula}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_correo}"/>
+                    <h:outputText value="#{capacitadoController.selected.correo}" title="#{bundle.ViewCapacitadoTitle_correo}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_direccion}"/>
+                    <h:outputText value="#{capacitadoController.selected.direccion}" title="#{bundle.ViewCapacitadoTitle_direccion}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_telefonoOficina}"/>
+                    <h:outputText value="#{capacitadoController.selected.telefonoOficina}" title="#{bundle.ViewCapacitadoTitle_telefonoOficina}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_telefonoDomicilio}"/>
+                    <h:outputText value="#{capacitadoController.selected.telefonoDomicilio}" title="#{bundle.ViewCapacitadoTitle_telefonoDomicilio}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_extTelefonoOficina}"/>
+                    <h:outputText value="#{capacitadoController.selected.extTelefonoOficina}" title="#{bundle.ViewCapacitadoTitle_extTelefonoOficina}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_contrasenia}"/>
+                    <h:outputText value="#{capacitadoController.selected.contrasenia}" title="#{bundle.ViewCapacitadoTitle_contrasenia}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_celular}"/>
+                    <h:outputText value="#{capacitadoController.selected.celular}" title="#{bundle.ViewCapacitadoTitle_celular}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_numHistoriaClinica}"/>
+                    <h:outputText value="#{capacitadoController.selected.numHistoriaClinica}" title="#{bundle.ViewCapacitadoTitle_numHistoriaClinica}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_tipo}"/>
+                    <h:outputText value="#{capacitadoController.selected.tipo}" title="#{bundle.ViewCapacitadoTitle_tipo}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_capacitadorid}"/>
+                    <h:outputText value="#{capacitadoController.selected.capacitadorid}" title="#{bundle.ViewCapacitadoTitle_capacitadorid}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_carreraId}"/>
+                    <h:outputText value="#{capacitadoController.selected.carreraId}" title="#{bundle.ViewCapacitadoTitle_carreraId}"/>
+                    <h:outputText value="#{bundle.ViewCapacitadoLabel_sectorid}"/>
+                    <h:outputText value="#{capacitadoController.selected.sectorid}" title="#{bundle.ViewCapacitadoTitle_sectorid}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{capacitadoController.destroyAndView}" value="#{bundle.ViewCapacitadoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewCapacitadoEditLink}"/>
+                <br />
+                <h:commandLink action="#{capacitadoController.prepareCreate}" value="#{bundle.ViewCapacitadoCreateLink}" />
+                <br />
+                <h:commandLink action="#{capacitadoController.prepareList}" value="#{bundle.ViewCapacitadoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewCapacitadoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

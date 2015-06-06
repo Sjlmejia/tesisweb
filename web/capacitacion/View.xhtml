@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewCapacitacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_id}"/>
+                    <h:outputText value="#{capacitacionController.selected.id}" title="#{bundle.ViewCapacitacionTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_codigo}"/>
+                    <h:outputText value="#{capacitacionController.selected.codigo}" title="#{bundle.ViewCapacitacionTitle_codigo}"/>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_fechaInicio}"/>
+                    <h:outputText value="#{capacitacionController.selected.fechaInicio}" title="#{bundle.ViewCapacitacionTitle_fechaInicio}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_fechaFin}"/>
+                    <h:outputText value="#{capacitacionController.selected.fechaFin}" title="#{bundle.ViewCapacitacionTitle_fechaFin}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_horario}"/>
+                    <h:outputText value="#{capacitacionController.selected.horario}" title="#{bundle.ViewCapacitacionTitle_horario}">
+                        <f:convertDateTime pattern="HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_local}"/>
+                    <h:outputText value="#{capacitacionController.selected.local}" title="#{bundle.ViewCapacitacionTitle_local}"/>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_observaciones}"/>
+                    <h:outputText value="#{capacitacionController.selected.observaciones}" title="#{bundle.ViewCapacitacionTitle_observaciones}"/>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_tema}"/>
+                    <h:outputText value="#{capacitacionController.selected.tema}" title="#{bundle.ViewCapacitacionTitle_tema}"/>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_tipoUsuario}"/>
+                    <h:outputText value="#{capacitacionController.selected.tipoUsuario}" title="#{bundle.ViewCapacitacionTitle_tipoUsuario}"/>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_evaluacionId}"/>
+                    <h:outputText value="#{capacitacionController.selected.evaluacionId}" title="#{bundle.ViewCapacitacionTitle_evaluacionId}"/>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_sectorId}"/>
+                    <h:outputText value="#{capacitacionController.selected.sectorId}" title="#{bundle.ViewCapacitacionTitle_sectorId}"/>
+                    <h:outputText value="#{bundle.ViewCapacitacionLabel_numMaxCapacitados}"/>
+                    <h:outputText value="#{capacitacionController.selected.numMaxCapacitados}" title="#{bundle.ViewCapacitacionTitle_numMaxCapacitados}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{capacitacionController.destroyAndView}" value="#{bundle.ViewCapacitacionDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewCapacitacionEditLink}"/>
+                <br />
+                <h:commandLink action="#{capacitacionController.prepareCreate}" value="#{bundle.ViewCapacitacionCreateLink}" />
+                <br />
+                <h:commandLink action="#{capacitacionController.prepareList}" value="#{bundle.ViewCapacitacionShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewCapacitacionIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

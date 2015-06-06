@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListCapacitadoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListCapacitadoEmpty}" rendered="#{capacitadoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{capacitadoController.items.rowCount > 0}">
+                    <h:outputText value="#{capacitadoController.pagination.pageFirstItem + 1}..#{capacitadoController.pagination.pageLastItem + 1}/#{capacitadoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{capacitadoController.previous}" value="#{bundle.Previous} #{capacitadoController.pagination.pageSize}" rendered="#{capacitadoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{capacitadoController.next}" value="#{bundle.Next} #{capacitadoController.pagination.pageSize}" rendered="#{capacitadoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{capacitadoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_nombre}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombre}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_apellido}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.apellido}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_cargo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cargo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_cedula}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cedula}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_correo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.correo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_direccion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.direccion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_telefonoOficina}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.telefonoOficina}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_telefonoDomicilio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.telefonoDomicilio}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_extTelefonoOficina}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.extTelefonoOficina}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_contrasenia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contrasenia}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_celular}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.celular}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_numHistoriaClinica}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numHistoriaClinica}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_tipo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_capacitadorid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.capacitadorid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_carreraId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.carreraId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListCapacitadoTitle_sectorid}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sectorid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{capacitadoController.prepareView}" value="#{bundle.ListCapacitadoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{capacitadoController.prepareEdit}" value="#{bundle.ListCapacitadoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{capacitadoController.destroy}" value="#{bundle.ListCapacitadoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{capacitadoController.prepareCreate}" value="#{bundle.ListCapacitadoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListCapacitadoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
